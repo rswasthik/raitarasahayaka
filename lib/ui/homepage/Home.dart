@@ -16,7 +16,7 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int currentTab = 0;
-  final List<Widget> screens = [HomeMain(), page2(), page3(), news()];
+  final List<Widget> screens = [HomeMain(), page2(), page3(), AgriNews()];
 
   final PageStorageBucket bucket = PageStorageBucket();
   Widget currentScreen = HomeMain();
@@ -134,7 +134,7 @@ class _HomeState extends State<Home> {
                   MaterialButton(
                     onPressed: () {
                       setState(() {
-                        currentScreen = news();
+                        currentScreen = AgriNews();
                         currentTab = 3;
                       });
                     },
