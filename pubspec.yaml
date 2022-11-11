@@ -39,8 +39,11 @@ dependencies:
   google_fonts: ^3.0.1
   sizer: ^2.0.15
   flutter_neumorphic: ^3.2.0
-  url_launcher: ^6.1.6
   flutter_phone_direct_caller: ^2.1.1
+  http: ^0.13.5
+  flutter_bloc: ^8.1.1
+  equatable: ^2.0.5
+  flutter_web_browser: ^0.17.1
 
 dev_dependencies:
   flutter_test:
@@ -71,6 +74,12 @@ flutter:
      - assets/Images/img_1.png
      - assets/Images/img_2.png
      - assets/Images/farmerpic.png
+     - assets/Images/harvser.png
+     - assets/Images/cultivator.png
+     - assets/Images/tractor.png
+     - assets/Images/sprayer.png
+     - assets/Images/discplough.png
+     - assets/Images/thresher.png
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

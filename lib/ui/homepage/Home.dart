@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:revahackathon/ui/homepage/homepages/HomeMain.dart';
 import 'package:revahackathon/ui/homepage/homepages/page2.dart';
 import 'package:revahackathon/ui/homepage/homepages/page3.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'homepages/news.dart';
 
@@ -39,27 +39,7 @@ class _HomeState extends State<Home> {
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.call),
         onPressed: () async {
-          String telephoneNumber = '+91 9880313164';
-          String telephoneUrl = "tel:$telephoneNumber";
-          if (await canLaunch(telephoneUrl)) {
-            await launch(telephoneUrl);
-          } else {
-            throw "Error occured trying to call that number.";
-          }
-          // showBottomSheet(
-          //     context: context,
-          //     shape: const RoundedRectangleBorder(
-          //       // <-- SEE HERE
-          //       borderRadius: BorderRadius.vertical(
-          //         top: Radius.circular(25.0),
-          //       ),
-          //     ),
-          //     builder: (BuildContext context) {
-          //       return Container(
-          //         height: 1000,
-          //         color: Colors.lightBlue,
-          //       );
-          //     });
+          FlutterPhoneDirectCaller.callNumber('+919880313164');
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

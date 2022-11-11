@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import 'package:revahackathon/ui/homepage/homepages/hire.dart';
+import 'package:revahackathon/ui/homepage/homepages/rent.dart';
 
 class BannerWidget extends StatelessWidget {
   const BannerWidget({Key? key}) : super(key: key);
@@ -50,6 +52,13 @@ class BannerWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: NeumorphicButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => hire(),
+                            ));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: Text(
@@ -77,6 +86,13 @@ class BannerWidget extends StatelessWidget {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: NeumorphicButton(
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => rent(),
+                            ));
+                      },
                       child: Padding(
                         padding: const EdgeInsets.all(4.0),
                         child: Text(

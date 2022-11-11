@@ -1,15 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:revahackathon/ui/homepage/homepages/notificcation.dart';
 import 'package:revahackathon/ui/homepage/homewidgets/BannerWidget.dart';
+import 'package:revahackathon/ui/homepage/homewidgets/sidenav.dart';
 
-class HomeMain extends StatelessWidget {
+class HomeMain extends StatefulWidget {
   const HomeMain({Key? key}) : super(key: key);
 
+  @override
+  State<HomeMain> createState() => _HomeMainState();
+}
+
+class _HomeMainState extends State<HomeMain> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        automaticallyImplyLeading: false,
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => notification(),
+                    ));
+              },
+              icon: Icon(Icons.notifications))
+        ],
+        automaticallyImplyLeading: true,
         title: Text(
           'HOME',
           style: TextStyle(color: Colors.black),
@@ -17,6 +34,7 @@ class HomeMain extends StatelessWidget {
         centerTitle: true,
         elevation: 0,
       ),
+      drawer: sidenav(),
       body: Scaffold(
         backgroundColor: Colors.white,
         body: Column(
@@ -67,21 +85,58 @@ class HomeMain extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              child: Image.asset("assets/images/bookimg.png"),
+                              child: Image.asset("assets/Images/harvser.png"),
                             ),
                             SizedBox(
                               height: 10,
                             ),
                             Text(
-                              'CSE',
+                              'Harvester',
                               style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 20),
+                                  fontWeight: FontWeight.bold, fontSize: 15),
                             )
                           ],
                         ),
                       ),
                     ),
                   ),
+                  InkWell(
+                    onTap: () {
+                      // Navigator.push(
+                      //     context,
+                      //     MaterialPageRoute(
+                      //       builder: (context) => SidebarXExampleApp(),
+                      //     ));
+                    },
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        height: 120,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                child:
+                                    Image.asset("assets/Images/cultivator.png"),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text('cultivator',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15))
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
                   Card(
                     elevation: 5,
                     child: Container(
@@ -95,14 +150,14 @@ class HomeMain extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              child: Image.asset("assets/images/bookimg.png"),
+                              child: Image.asset("assets/Images/tractor.png"),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
-                            Text('CS&IT',
+                            Text('Tractor',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20))
+                                    fontWeight: FontWeight.bold, fontSize: 15))
                           ],
                         ),
                       ),
@@ -121,14 +176,14 @@ class HomeMain extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              child: Image.asset("assets/images/bookimg.png"),
+                              child: Image.asset("assets/Images/sprayer.png"),
                             ),
                             SizedBox(
                               height: 10,
                             ),
-                            Text('ECE',
+                            Text('Self propelled sprayer',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20))
+                                    fontWeight: FontWeight.bold, fontSize: 10))
                           ],
                         ),
                       ),
@@ -147,14 +202,15 @@ class HomeMain extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              child: Image.asset("assets/images/bookimg.png"),
+                              child:
+                                  Image.asset("assets/Images/discplough.png"),
                             ),
                             SizedBox(
-                              height: 10,
+                              height: 20,
                             ),
-                            Text('EEE',
+                            Text('Disc Plough',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20))
+                                    fontWeight: FontWeight.bold, fontSize: 15))
                           ],
                         ),
                       ),
@@ -173,40 +229,14 @@ class HomeMain extends StatelessWidget {
                         child: Column(
                           children: [
                             Container(
-                              child: Image.asset("assets/images/bookimg.png"),
+                              child: Image.asset("assets/Images/thresher.png"),
                             ),
                             SizedBox(
                               height: 10,
                             ),
-                            Text('ME',
+                            Text('Thresher',
                                 style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20))
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    child: Container(
-                      height: 120,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          children: [
-                            Container(
-                              child: Image.asset("assets/images/bookimg.png"),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text('CE',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 20))
+                                    fontWeight: FontWeight.bold, fontSize: 15))
                           ],
                         ),
                       ),
