@@ -10,6 +10,11 @@ class favorite extends StatefulWidget {
 class _favoriteState extends State<favorite> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Favorite'),
+        centerTitle: true,
+      ),
+    );
   }
 }

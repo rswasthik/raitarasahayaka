@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:revahackathon/ui/homepage/homepages/notificcation.dart';
 import 'package:revahackathon/ui/homepage/homewidgets/BannerWidget.dart';
+import 'package:revahackathon/ui/homepage/homewidgets/cultivator.dart';
+import 'package:revahackathon/ui/homepage/homewidgets/productdeatils.dart';
 import 'package:revahackathon/ui/homepage/homewidgets/sidenav.dart';
+import 'package:revahackathon/ui/homepage/homewidgets/tractordeatils.dart';
 
 class HomeMain extends StatefulWidget {
   const HomeMain({Key? key}) : super(key: key);
@@ -72,41 +75,44 @@ class _HomeMainState extends State<HomeMain> {
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Card(
-                    elevation: 5,
-                    child: Container(
-                      height: 120,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          children: [
-                            Container(
-                              child: Image.asset("assets/Images/harvser.png"),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text(
-                              'Harvester',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 15),
-                            )
-                          ],
+                  GestureDetector(
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        height: 120,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Image.asset("assets/Images/harvser.png"),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text(
+                                'Harvester',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 15),
+                              )
+                            ],
+                          ),
                         ),
                       ),
                     ),
-                  ),
-                  InkWell(
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //       builder: (context) => SidebarXExampleApp(),
-                      //     ));
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => productdeatils()));
+                    },
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => cultivatordetails()));
                     },
                     child: Card(
                       elevation: 5,
@@ -137,28 +143,65 @@ class _HomeMainState extends State<HomeMain> {
                       ),
                     ),
                   ),
-                  Card(
-                    elevation: 5,
-                    child: Container(
-                      height: 120,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(MaterialPageRoute(
+                          builder: (context) => tractordetalils()));
+                    },
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        height: 120,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Image.asset("assets/Images/tractor.png"),
+                              ),
+                              SizedBox(
+                                height: 20,
+                              ),
+                              Text('Tractor',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 15))
+                            ],
+                          ),
+                        ),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          children: [
-                            Container(
-                              child: Image.asset("assets/Images/tractor.png"),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text('Tractor',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 15))
-                          ],
+                    ),
+                  ),
+                  GestureDetector(
+                    onTap: () {},
+                    child: Card(
+                      elevation: 5,
+                      child: Container(
+                        height: 120,
+                        width: 100,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Column(
+                            children: [
+                              Container(
+                                child: Image.asset("assets/Images/sprayer.png"),
+                              ),
+                              SizedBox(
+                                height: 10,
+                              ),
+                              Text('Self propelled sprayer',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 10))
+                            ],
+                          ),
                         ),
                       ),
                     ),
@@ -175,36 +218,7 @@ class _HomeMainState extends State<HomeMain> {
                         padding: const EdgeInsets.symmetric(horizontal: 10),
                         child: Column(
                           children: [
-                            Container(
-                              child: Image.asset("assets/Images/sprayer.png"),
-                            ),
-                            SizedBox(
-                              height: 10,
-                            ),
-                            Text('Self propelled sprayer',
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold, fontSize: 10))
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                  Card(
-                    elevation: 5,
-                    child: Container(
-                      height: 120,
-                      width: 100,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 10),
-                        child: Column(
-                          children: [
-                            Container(
-                              child:
-                                  Image.asset("assets/Images/discplough.png"),
-                            ),
+                            Image.asset("assets/Images/discplough.png"),
                             SizedBox(
                               height: 20,
                             ),

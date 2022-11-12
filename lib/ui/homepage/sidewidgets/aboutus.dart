@@ -10,6 +10,11 @@ class aboutus extends StatefulWidget {
 class _aboutusState extends State<aboutus> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('About Us'),
+        centerTitle: true,
+      ),
+    );
   }
 }

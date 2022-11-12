@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "127312879473",
+    "project_id": "revahack-9ea2c",
+    "storage_bucket": "revahack-9ea2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:127312879473:android:21e38da817cf18e95c20d0",
+        "android_client_info": {
+          "package_name": "com.swasthik.revahackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "127312879473-04g74q719lejvotu9cckd73t4ch7qt0u.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQzTt3DSrMX3lMewoBE2VsjVgkPZ4InGQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "127312879473-04g74q719lejvotu9cckd73t4ch7qt0u.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

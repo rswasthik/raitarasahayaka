@@ -12,9 +12,10 @@ class _MyFarmEquipmentState extends State<MyFarmEquipment> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Farm Equipment'),
+        title: Text('MyFarm Equipment'),
         centerTitle: true,
       ),
+      body: Column(),
     );
   }
 }

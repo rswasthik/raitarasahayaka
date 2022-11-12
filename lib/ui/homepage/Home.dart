@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
                           color: currentTab == 1 ? Colors.black : Colors.grey,
                         ),
                         Text(
-                          'Solution',
+                          'Chat',
                           style: TextStyle(
                             color: currentTab == 1 ? Colors.black : Colors.grey,
                           ),
