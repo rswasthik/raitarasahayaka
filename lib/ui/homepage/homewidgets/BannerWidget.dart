@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import 'package:revahackathon/ui/homepage/homepages/hire.dart';
-import 'package:revahackathon/ui/homepage/homepages/rent.dart';
 
 class BannerWidget extends StatelessWidget {
   const BannerWidget({Key? key}) : super(key: key);
@@ -47,75 +45,75 @@ class BannerWidget extends StatelessWidget {
                   )
                 ],
               ),
-              Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: NeumorphicButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => hire(),
-                            ));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text(
-                          "Hire",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                    blurRadius: 10,
-                                    color: Colors.red,
-                                    offset: Offset(0, 0)),
-                                Shadow(
-                                    blurRadius: 10,
-                                    color: Colors.red,
-                                    offset: Offset(0, 0)),
-                              ]),
-                        ),
-                      ),
-                    ),
-                  ),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: NeumorphicButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => rent(),
-                            ));
-                      },
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Text(
-                          "Rent",
-                          style: TextStyle(
-                              fontSize: 25,
-                              color: Colors.white,
-                              shadows: [
-                                Shadow(
-                                    blurRadius: 10,
-                                    color: Colors.red,
-                                    offset: Offset(0, 0)),
-                                Shadow(
-                                    blurRadius: 10,
-                                    color: Colors.red,
-                                    offset: Offset(0, 0)),
-                              ]),
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              )
+              // Row(
+              //   children: [
+              //     Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child: NeumorphicButton(
+              //         onPressed: () {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                 builder: (context) => hire(),
+              //               ));
+              //         },
+              //         child: Padding(
+              //           padding: const EdgeInsets.all(4.0),
+              //           child: Text(
+              //             "Hire",
+              //             style: TextStyle(
+              //                 fontSize: 25,
+              //                 color: Colors.white,
+              //                 shadows: [
+              //                   Shadow(
+              //                       blurRadius: 10,
+              //                       color: Colors.red,
+              //                       offset: Offset(0, 0)),
+              //                   Shadow(
+              //                       blurRadius: 10,
+              //                       color: Colors.red,
+              //                       offset: Offset(0, 0)),
+              //                 ]),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //     SizedBox(
+              //       height: 10,
+              //     ),
+              //     Padding(
+              //       padding: const EdgeInsets.all(8.0),
+              //       child: NeumorphicButton(
+              //         onPressed: () {
+              //           Navigator.push(
+              //               context,
+              //               MaterialPageRoute(
+              //                 builder: (context) => rent(),
+              //               ));
+              //         },
+              //         child: Padding(
+              //           padding: const EdgeInsets.all(4.0),
+              //           child: Text(
+              //             "Rent",
+              //             style: TextStyle(
+              //                 fontSize: 25,
+              //                 color: Colors.white,
+              //                 shadows: [
+              //                   Shadow(
+              //                       blurRadius: 10,
+              //                       color: Colors.red,
+              //                       offset: Offset(0, 0)),
+              //                   Shadow(
+              //                       blurRadius: 10,
+              //                       color: Colors.red,
+              //                       offset: Offset(0, 0)),
+              //                 ]),
+              //           ),
+              //         ),
+              //       ),
+              //     ),
+              //   ],
+              // )
             ],
           ),
         ),

@@ -12,8 +12,9 @@ class _myfarmplsuState extends State<myfarmplsu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Add Deatils'),
+        title: Text('Rent'),
         centerTitle: true,
+        automaticallyImplyLeading: false,
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -32,20 +33,7 @@ class _myfarmplsuState extends State<myfarmplsu> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        hintText: 'Farm Name'),
-                  ),
-                ),
-                SizedBox(
-                  height: 30,
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(18.0),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(8),
-                        ),
-                        hintText: 'Land Size'),
+                        hintText: 'Farmer Name'),
                   ),
                 ),
                 SizedBox(
@@ -71,7 +59,7 @@ class _myfarmplsuState extends State<myfarmplsu> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        hintText: 'Crops'),
+                        hintText: 'Machinanry Name'),
                   ),
                 ),
                 SizedBox(
@@ -84,7 +72,20 @@ class _myfarmplsuState extends State<myfarmplsu> {
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
-                        hintText: 'Crops'),
+                        hintText: 'Price(per hr)'),
+                  ),
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(18.0),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        hintText: 'Phone Number'),
                   ),
                 ),
                 SizedBox(
@@ -96,7 +97,7 @@ class _myfarmplsuState extends State<myfarmplsu> {
                   child: TextButton(
                     onPressed: () {},
                     child: Text(
-                      'Next',
+                      'Submit',
                       style: TextStyle(color: Colors.black, fontSize: 30),
                     ),
                   ),

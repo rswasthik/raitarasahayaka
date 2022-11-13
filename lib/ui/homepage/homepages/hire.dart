@@ -13,7 +13,7 @@ class _hireState extends State<hire> {
     return Scaffold(
       drawer: Drawer(),
       appBar: AppBar(
-        automaticallyImplyLeading: false,
+        automaticallyImplyLeading: true,
         title: Text('Hire'),
       ),
       body: Row(

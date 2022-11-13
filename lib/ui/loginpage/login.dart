@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:revahackathon/ui/homepage/homepages/HomeMain.dart';
+import 'package:revahackathon/ui/homepage/Home.dart';
 import 'package:revahackathon/ui/loginpage/signup.dart';
 
 import '../../constant.dart';
@@ -164,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
           //
           //   if (isLoggedIn) {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomeMain()));
+              context, MaterialPageRoute(builder: (context) => Home()));
           //   }
           //   setState(() {
           //     isLoadingBtn = false;

@@ -4,6 +4,7 @@ import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
 import 'package:revahackathon/ui/homepage/homepages/HomeMain.dart';
 import 'package:revahackathon/ui/homepage/homepages/page2.dart';
 import 'package:revahackathon/ui/homepage/homepages/page3.dart';
+import 'package:revahackathon/ui/homepage/sidewidgets/widgets/myfarmplsu.dart';
 
 import 'homepages/news.dart';
 
@@ -81,7 +82,7 @@ class _HomeState extends State<Home> {
                   MaterialButton(
                     onPressed: () {
                       setState(() {
-                        currentScreen = page2();
+                        currentScreen = myfarmplsu();
                         currentTab = 1;
                       });
                     },
@@ -90,11 +91,11 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Icon(
-                          Icons.chat_bubble_outline,
+                          Icons.key,
                           color: currentTab == 1 ? Colors.black : Colors.grey,
                         ),
                         Text(
-                          'Chat',
+                          'Rent',
                           style: TextStyle(
                             color: currentTab == 1 ? Colors.black : Colors.grey,
                           ),
