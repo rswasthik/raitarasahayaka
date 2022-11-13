@@ -15,6 +15,20 @@ class _notificationState extends State<notification> {
         title: Text('Notification'),
         centerTitle: true,
       ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.only(top: 300),
+          child: Column(
+            children: [
+              Icon(
+                Icons.notifications,
+                size: 50,
+              ),
+              Text('No Notifications')
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

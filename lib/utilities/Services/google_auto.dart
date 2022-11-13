@@ -1,56 +1,63 @@
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
-import 'package:flutter/material.dart';
-import 'package:google_sign_in/google_sign_in.dart';
-
-class Authentication {
-  static Future<User?> signInWithGoogle({required BuildContext context}) async {
-    FirebaseAuth auth = FirebaseAuth.instance;
-    User? user;
-
-    if (kIsWeb) {
-      GoogleAuthProvider authProvider = GoogleAuthProvider();
-
-      try {
-        final UserCredential userCredential =
-            await auth.signInWithPopup(authProvider);
-
-        user = userCredential.user;
-      } catch (e) {
-        print(e);
-      }
-    } else {
-      final GoogleSignIn googleSignIn = GoogleSignIn();
-
-      final GoogleSignInAccount? googleSignInAccount =
-          await googleSignIn.signIn();
-
-      if (googleSignInAccount != null) {
-        final GoogleSignInAuthentication googleSignInAuthentication =
-            await googleSignInAccount.authentication;
-
-        final AuthCredential credential = GoogleAuthProvider.credential(
-          accessToken: googleSignInAuthentication.accessToken,
-          idToken: googleSignInAuthentication.idToken,
-        );
-
-        try {
-          final UserCredential userCredential =
-              await auth.signInWithCredential(credential);
-
-          user = userCredential.user;
-        } on FirebaseAuthException catch (e) {
-          if (e.code == 'account-exists-with-different-credential') {
-            // ...
-          } else if (e.code == 'invalid-credential') {
-            // ...
-          }
-        } catch (e) {
-          // ...
-        }
-      }
-    }
-
-    return user;
-  }
-}
+// import 'dart:convert';
+//
+// import 'package:flutter/material.dart';
+// import 'package:http/http.dart' as http;
+// import 'package:motion_toast/motion_toast.dart';
+// import 'package:motion_toast/resources/arrays.dart';
+//
+// Future<bool> login(String email, String password, BuildContext context) async {
+//   var res = await http.post(
+//       Uri.parse('https://swasthikapp.herokuapp.com/api/user/login'),
+//       headers: <String, String>{
+//         'Context-Type': 'application/json;charSet=UTF-8'
+//       },
+//       body: <String, String>{
+//         'email': email,
+//         'password': password
+//       });
+//
+//   // print(res.body);
+//   if (res.statusCode == 200) {
+//     var data = jsonDecode(res.body.toString());
+//     print(data["result"]['token']);
+//
+//     print('Login Successfully');
+//     return true;
+//   } else {
+//     _displayWarningMotionToast(context);
+//     print(res.body);
+//     print('failed');
+//   }
+//   return false;
+// }
+//
+// void _displaySuccessMotionToast(BuildContext context) {
+//   MotionToast.success(
+//     title: Text(
+//       'Login',
+//       style: TextStyle(fontWeight: FontWeight.bold),
+//     ),
+//     description: Text(
+//       'Successfully Login',
+//       style: TextStyle(fontSize: 12),
+//     ),
+//     layoutOrientation: ToastOrientation.rtl,
+//     animationType: AnimationType.fromRight,
+//     dismissable: true,
+//   ).show(context);
+// }
+//
+// void _displayWarningMotionToast(BuildContext context) {
+//   MotionToast.warning(
+//     title: Text(
+//       'Failed!!',
+//       style: TextStyle(
+//         fontWeight: FontWeight.bold,
+//       ),
+//     ),
+//     description: const Text('Failed to Login'),
+//     animationCurve: Curves.bounceIn,
+//     borderRadius: 0,
+//     animationDuration: const Duration(milliseconds: 1000),
+//   ).show(context);
+// }

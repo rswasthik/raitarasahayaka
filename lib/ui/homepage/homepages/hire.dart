@@ -16,6 +16,9 @@ class _hireState extends State<hire> {
         automaticallyImplyLeading: false,
         title: Text('Hire'),
       ),
+      body: Row(
+        children: [],
+      ),
     );
   }
 }

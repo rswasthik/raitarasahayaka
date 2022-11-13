@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:revahackathon/ui/homepage/Home.dart';
+import 'package:revahackathon/ui/homepage/homepages/HomeMain.dart';
 import 'package:revahackathon/ui/loginpage/signup.dart';
 
 import '../../constant.dart';
@@ -16,6 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailcontroller = TextEditingController();
   final TextEditingController _passwordcontroller = TextEditingController();
   bool _rememberMe = false;
+  bool isLoadingBtn = false;
 
   Widget _buildEmailTF() {
     return Column(
@@ -151,15 +152,24 @@ class _LoginScreenState extends State<LoginScreen> {
       width: double.infinity,
       child: OutlinedButton(
         onPressed: () async {
-          // save(
-          //   _emailcontroller.text.toString(),
-          //   _passwordcontroller.text.toString(),
-          // );
+          // if (!isLoadingBtn) {
+          //   setState(() {
+          //     isLoadingBtn = true;
+          //   });
+          //   bool isLoggedIn = await login(
+          //     _emailcontroller.text,
+          //     _passwordcontroller.text,
+          //     context,
+          //   );
+          //
+          //   if (isLoggedIn) {
           Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => Home(),
-              ));
+              context, MaterialPageRoute(builder: (context) => HomeMain()));
+          //   }
+          //   setState(() {
+          //     isLoadingBtn = false;
+          //   });
+          // }
         },
         child: Text(
           'LOGIN',
